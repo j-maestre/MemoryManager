@@ -17,21 +17,21 @@ MemoryManager& mm_instance = MemoryManager::get_instance();
 You can create an file.ini to set memoryblocks size and number, there is an example in ./Sandbox/memory.ini
 Example:
 
-__
-1			= 32
-2			= 32
-4			= 32
-8			= 16
-16			= 8
-32			= 2
-__
 
-size 1 with 32 blocks
-size 2 with 32 blocks
-size 4 with 32 blocks
-size 8 with 16 blocks
-size 16 with 8 blocks
-size 32 with 2 blocks
+- 1			= 32
+- 2			= 32
+- 4			= 32
+- 8			= 16
+- 16		= 8
+- 32		= 2
+
+
+- size 1 with 32 blocks
+- size 2 with 32 blocks
+- size 4 with 32 blocks
+- size 8 with 16 blocks
+- size 16 with 8 blocks
+- size 32 with 2 blocks
 
 ```C++
 mm_instance.init("mini_memory.ini");
