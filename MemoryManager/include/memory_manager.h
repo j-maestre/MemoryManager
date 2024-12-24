@@ -18,8 +18,6 @@ class MM_API MemoryManager final{
 	struct Block {
 		unsigned int size;
 		void* adress;
-
-		// in use if user had allocated this block of memory
 		bool in_use = false;
 	};
 
@@ -36,7 +34,7 @@ public:
 
 	void init(const char* conf_path);
 
-	void* allocate(size_t bytes);
+	void* allocate(unsigned int bytes);
 	void deallocate(void* adress);
 
 private:
@@ -46,5 +44,8 @@ private:
 
 	// Pre allocated blocks of each size
 	std::unordered_map<void*, Block> m_blocks;
+	std::unordered_map<void*, Block> m_original_blocks;
+
+	unsigned int m_max_block_size = 0;
 
 };
